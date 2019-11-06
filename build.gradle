@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+    id 'idea'
+}
+
+group = 'com.es.jpademo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.h2database:h2:1.0.60'
+
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    implementation 'commons-io:commons-io:2.6'
+    //compiple 'org.jsoup:jsoup:1.11.3'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.7.3'
+//    compile  'com.opencsv:opencsv:2.3'
+    // https://mvnrepository.com/artifact/net.sf.opencsv/opencsv
+    compile group: 'net.sf.opencsv', name: 'opencsv', version: '2.3'
+
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    compile group: 'com.google.guava', name: 'guava', version: '16.0.1'
+
+
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testCompile ':jpa-demo'
+    testImplementation 'commons-io:commons-io:2.6'
+    //compiple 'org.jsoup:jsoup:1.11.3'
+    testCompile group: 'org.jsoup', name: 'jsoup', version: '1.7.3'
+    testImplementation  'com.opencsv:opencsv:2.3'
+
+
+}
